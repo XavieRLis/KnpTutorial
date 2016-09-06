@@ -34,6 +34,7 @@ class GenusNote
     private $createdAt;
 
     /**
+     * @var Genus
      * @ORM\ManyToOne(targetEntity="Genus")
      */
     private $genus;
@@ -109,6 +110,23 @@ class GenusNote
         $this->createdAt = $createdAt;
         return $this;
     }
+
+    /**
+     * @return Genus
+     */
+    public function getGenus()
+    {
+        return $this->genus;
+    }
+
+    /**
+     * @param Genus $genus
+     */
+    public function setGenus(Genus $genus)
+    {
+        $this->genus = $genus;
+    }
+
 
 
 }
