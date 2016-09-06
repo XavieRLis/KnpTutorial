@@ -8,6 +8,7 @@ AppBundle\Entity\Genus:
 
 AppBundle\Entity\GenusNote:
     genus.note_{1..100}:
+        genus: '@genus_*'
         username: <userName()>
         userAvatarFilename: '50%? leanna.jpeg : ryan.jpeg'
         note: <paragraph()>

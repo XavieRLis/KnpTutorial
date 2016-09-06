@@ -36,6 +36,7 @@ class GenusNote
     /**
      * @var Genus
      * @ORM\ManyToOne(targetEntity="Genus")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $genus;
 
