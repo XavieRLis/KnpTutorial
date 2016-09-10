@@ -62,10 +62,8 @@ class GenusController extends Controller
         if (!$genus) {
             throw $this->createNotFoundException('genus not found');
         }
-        $recentNotes = $genus->getNotes()
-            ->filter(function(GenusNote $note) {
-                return $note->getCreatedAt() > new \DateTime('-3 months');
-            });
+        $recentNotes = $em->getRepository('AppBundle:GenusNote')
+            ->findAllRecentNotesForGenus($genus);
 //        $funFact = 'Octopuses can change the color of their body in just *three-tenths* of a second!';
 //        $cache = $this->get('doctrine_cache.providers.my_markdown_cache');
 //        $key = md5($funFact);
