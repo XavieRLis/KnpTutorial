@@ -9,7 +9,8 @@ services:
         arguments: ['@markdown.parser', '@doctrine_cache.providers.my_markdown_cache']
     app.markdown_extension:
         class: AppBundle\Twig\MarkdownExtension
-        arguments: ['@app.markdown_transformer']
+#        arguments: ['@app.markdown_transformer']
+        autowire: true
         tags:
             - { name: twig.extension }
 #    service_name:
